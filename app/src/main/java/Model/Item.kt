@@ -8,7 +8,7 @@ class Item {
     constructor(id: String?, uid: String?, titulo: String?, data: String?) {
         this.id = id
         this.uid = id
-        this.titulo = titulo
-        this.data = data
+        this.nome = titulo
+        this.descricao = data
     }
 }
