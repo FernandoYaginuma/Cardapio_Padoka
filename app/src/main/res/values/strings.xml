@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Cardapio_Padoka</string>
+
+    <!--Elementos comuns-->
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="voltar">Voltar</string>
+
+    <!--Texto para Tela de login-->
+    <string name="acesseContaTxt">Acesse sua conta</string>
+    <string name="acessar">Acessar conta</string>
+    <string name="crieContaTxt">Crie Conta</string>
+    <string name="recuperarSenha">Recuperar Senha</string>
+
+    <!--Texto para Tela de cadastro-->
+    <string name="cadastroUsuario">Cadastro de Usuário</string>"
+    <string name="cadastrarUsuario">Cadastrar Usuário</string>
+    <string name="senhaConfirmar">Confirme a senha</string>
+    <string name="voltarLogin">Voltar para tela de login</string>
+
+    <!--Texto para Tela de recuperar Senha-->
+    <string name="instrucoesRecuperarSenha">Informe o seu e-mail para recuperar a senha. Você receberá uma mensagem contendo as instruções para recuperação!</string>"
+
 </resources>
