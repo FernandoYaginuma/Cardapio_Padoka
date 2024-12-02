@@ -14,7 +14,7 @@ class RecuperarSenhaViewModel : ViewModel() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val signInMethods = task.result?.signInMethods
-                    if (signInMethods != null && signInMethods.isNotEmpty()) {
+                    if (!signInMethods.isNullOrEmpty()) {
                         redefinirSenha(email)
                     } else {
                         _status.value = "E-mail não cadastrado. Por favor, cadastre-se."

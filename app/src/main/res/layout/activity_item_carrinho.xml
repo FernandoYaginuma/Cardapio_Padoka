@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cenariofundo"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/nomeItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomeItem"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/precoItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:text="@string/precoItem"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:layout_below="@id/nomeItem"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnLixeira"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/laranja"
+        android:text="🗑"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/precoItem"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnRemoveItem"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:background="@color/laranja"
+        android:text="@string/menos"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@id/btnLixeira"
+        android:layout_alignTop="@id/btnLixeira" />
+
+    <TextView
+        android:id="@+id/quantidadeItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="12dp"
+        android:text="@string/numberOne"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/btnRemoveItem"
+        android:layout_alignTop="@id/btnLixeira" />
+
+    <Button
+        android:id="@+id/btnAdicionarItem"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:background="@color/laranja"
+        android:text="@string/mais"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@id/quantidadeItem"
+        android:layout_alignTop="@id/btnLixeira" />
+
+    <ImageView
+        android:id="@+id/imagemItemCarrinho"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="8dp"
+        android:src="@color/cardview_dark_background"
+        android:layout_toRightOf="@id/btnAdicionarItem"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

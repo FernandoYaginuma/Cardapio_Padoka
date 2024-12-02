@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login) // Certifique-se de que o nome do layout esteja correto
+        setContentView(R.layout.activity_login)
 
         campEmail = findViewById(R.id.campEmail)
         campPassword = findViewById(R.id.campPassword)
