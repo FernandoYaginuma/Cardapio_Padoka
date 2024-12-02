@@ -2,6 +2,7 @@
     <string name="app_name">Cardapio_Padoka</string>
 
     <!--Elementos comuns-->
+    <string name="nomeUsuario">Nome </string>
     <string name="email">E-mail</string>
     <string name="senha">Senha</string>
     <string name="voltar">Voltar</string>
