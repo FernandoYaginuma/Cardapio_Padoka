@@ -22,4 +22,6 @@
     <!--Texto para Tela de recuperar Senha-->
     <string name="instrucoesRecuperarSenha">Informe o seu e-mail para recuperar a senha. Você receberá uma mensagem contendo as instruções para recuperação!</string>"
 
+    <!--Texto para Tela de item detalhe-->
+    <string name="item_image_description"> item descrição </string>
 </resources>

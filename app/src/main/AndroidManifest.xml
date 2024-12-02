@@ -15,13 +15,13 @@
         android:theme="@style/Theme.Cardapio_Padoka"
         tools:targetApi="31">
         <activity
-            android:name="login.RedefinirSenhaActivity"
+            android:name="autenticar_user.redefinirSenha.RedefinirSenhaActivity"
             android:exported="false" />
         <activity
-            android:name="login.CadastrarUsuarioActivity"
+            android:name="autenticar_user.cadastro.CadastrarUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name="login.LoginActivity"
+            android:name="autenticar_user.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name="View.Telaconclusao"
