@@ -34,6 +34,7 @@ class CardapioActivity : AppCompatActivity() {
 
         carregarDados()
     }
+<<<<<<< HEAD
 
     private fun setupRecyclerView(recyclerView: RecyclerView, adapter: CardapioAdapter) {
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -72,3 +73,7 @@ class CardapioActivity : AppCompatActivity() {
             }
     }
 }
+=======
+}
+
+>>>>>>> 9a32b13c2c4f1b14d47a51fbd2f933a0b78e58d2
