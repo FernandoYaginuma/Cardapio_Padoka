@@ -43,8 +43,8 @@
 
     <Button
         android:id="@+id/btnAdicionarItem"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
         android:background="@color/laranja"
         android:text="+"
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/btnRemoveItem"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/laranja"

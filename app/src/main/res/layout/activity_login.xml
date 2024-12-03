@@ -97,10 +97,10 @@
 
     <Button
         android:id="@+id/btnRecuperarSenha"
-        android:layout_width="0dp"
+        android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/laranja"
+        android:backgroundTint="@color/laranja"
         android:text="@string/recuperarSenha"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"

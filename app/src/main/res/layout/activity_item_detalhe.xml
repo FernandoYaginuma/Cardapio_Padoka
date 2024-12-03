@@ -59,7 +59,8 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/itemDescription"
@@ -68,17 +69,19 @@
                 android:text="Descrição completa do item, incluindo informações sobre ingredientes, preparo e características especiais."
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:gravity="center"    />
 
             <TextView
                 android:id="@+id/itemPrice"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="R$ 00,00"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/marrom"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:gravity="center" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
