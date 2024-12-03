@@ -33,7 +33,6 @@
                 android:textColor="@color/black"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Descrição Completa -->
             <TextView
                 android:id="@+id/itemDescription"
                 android:layout_width="match_parent"

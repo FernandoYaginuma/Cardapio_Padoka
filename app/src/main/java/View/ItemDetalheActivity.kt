@@ -13,7 +13,6 @@ class ItemDetalheActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding = ActivityItemDetalheBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

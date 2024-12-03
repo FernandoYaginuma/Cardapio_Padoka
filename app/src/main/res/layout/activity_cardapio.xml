@@ -5,42 +5,17 @@
     android:orientation="vertical"
     android:background="@drawable/cenariofundo">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/cardapioTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:text="Cardápio da Padaria"
+        android:textSize="24sp"
+        android:gravity="center"
         android:padding="16dp"
-        android:gravity="center_vertical">
+        android:textStyle="bold"/>
 
-        <ImageButton
-            android:id="@+id/btnLogout"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/logout"
-            android:src="@drawable/ic_logout" />
-
-        <!-- Título do Cardápio -->
-        <TextView
-            android:id="@+id/cardapioTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cardapioPadaria"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_weight="1"/>
-
-        <ImageButton
-            android:id="@+id/btnCarrinho"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/carrinho"
-            android:src="@drawable/ic_shopping_cart" />
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,6 +29,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+
             <LinearLayout
                 android:id="@+id/bebidasquentesCategory"
                 android:layout_width="match_parent"
@@ -61,11 +37,12 @@
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
 
+
                 <TextView
                     android:id="@+id/bebidasquentesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/bebidasQuentes"
+                    android:text="Bebidas Quentes"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -88,7 +65,7 @@
                     android:id="@+id/bebidasgeladasTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/bebidasGeladas"
+                    android:text="Bebidas Geladas"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -111,7 +88,7 @@
                     android:id="@+id/lanchesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/lanches"
+                    android:text="Lanches"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -134,7 +111,7 @@
                     android:id="@+id/salgadosTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/salgados"
+                    android:text="Salgados"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -157,11 +134,7 @@
                     android:id="@+id/docesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
                     android:text="Doces"
-=======
-                    android:text="@string/doces"
->>>>>>> f705b7d71f540d5f2ef498f47908e239476806fb
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -172,6 +145,7 @@
                     android:layout_marginTop="8dp"
                     android:scrollbars="vertical" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
