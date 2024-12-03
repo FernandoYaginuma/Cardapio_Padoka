@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.cardapio_padoka.databinding.ActivityItemCarrinhoBinding
 
 class CarrinhoAdapter(
@@ -27,6 +29,11 @@ class CarrinhoAdapter(
         holder.binding.precoItem.text = "R$ %.2f".format(item.preco)
         holder.binding.quantidadeItem.text = item.quantidade.toString()
 
+        Glide.with(holder.itemView.context)
+            .load(item.imageURL)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(holder.binding.imagemItemCarrinho)
+
         holder.binding.btnAdicionarItem.setOnClickListener {
             item.quantidade = item.quantidade!! + 1
             notifyItemChanged(position)
@@ -46,14 +53,9 @@ class CarrinhoAdapter(
         holder.binding.btnLixeira.setOnClickListener {
             removerItem(item)
         }
-
-        //  a imagem do item
-
     }
 
     override fun getItemCount(): Int {
         return itensCarrinho.size
     }
-
-
 }

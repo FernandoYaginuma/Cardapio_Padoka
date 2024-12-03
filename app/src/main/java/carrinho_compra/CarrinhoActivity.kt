@@ -1,8 +1,6 @@
 package carrinho_compra
 
-import carrinho_compra.CarrinhoAdapter
 import Item
-import View.CardapioActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -10,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cardapio_padoka.databinding.ActivityCarrinhoBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import View.CardapioActivity
 
 class CarrinhoActivity : AppCompatActivity() {
 
@@ -20,7 +19,6 @@ class CarrinhoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityCarrinhoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -68,8 +66,7 @@ class CarrinhoActivity : AppCompatActivity() {
 
     private fun removerItem(item: Item) {
         item.id?.let {
-            firestore.collection("carrinho").document(it)
-                .delete()
+            firestore.collection("carrinho").document(it).delete()
                 .addOnSuccessListener {
                     listaItensCarrinho.remove(item)
                     adapter.notifyDataSetChanged()
