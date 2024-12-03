@@ -5,17 +5,41 @@
     android:orientation="vertical"
     android:background="@drawable/cenariofundo">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/logout"
+        android:src="@drawable/ic_logout" />
 
     <TextView
         android:id="@+id/cardapioTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cardápio da Padaria"
+        android:text="@string/cardapioPadaria"
         android:textSize="24sp"
         android:gravity="center"
-        android:padding="16dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
+    <ImageButton
+        android:id="@+id/btnCarrinho"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/carrinho"
+        android:src="@drawable/ic_shopping_cart" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,14 +53,12 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-
             <LinearLayout
                 android:id="@+id/bebidasquentesCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
-
 
                 <TextView
                     android:id="@+id/bebidasquentesTitle"
@@ -145,8 +167,6 @@
                     android:layout_marginTop="8dp"
                     android:scrollbars="vertical" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
