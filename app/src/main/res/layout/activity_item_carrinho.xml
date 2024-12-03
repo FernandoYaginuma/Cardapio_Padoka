@@ -43,8 +43,8 @@
 
     <Button
         android:id="@+id/btnAdicionarItem"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="8dp"
         android:background="@color/laranja"
         android:text="+"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:paddingHorizontal="4dp"
         android:paddingVertical="6dp"
         android:text="@string/numberOne"
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/btnRemoveItem"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/laranja"
@@ -84,7 +84,7 @@
     <Button
         android:id="@+id/btnLixeira"
         android:layout_width="55dp"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:layout_marginTop="8dp"
         android:background="@color/laranja"
         android:text="🗑"
