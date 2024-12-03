@@ -157,11 +157,7 @@
                     android:id="@+id/docesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                    android:text="Doces"
-=======
                     android:text="@string/doces"
->>>>>>> f705b7d71f540d5f2ef498f47908e239476806fb
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
