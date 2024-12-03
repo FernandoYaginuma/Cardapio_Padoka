@@ -20,7 +20,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/logout"
         android:src="@drawable/ic_logout" />
-    <!-- Título do Cardápio -->
+
     <TextView
         android:id="@+id/cardapioTitle"
         android:layout_width="wrap_content"
@@ -53,14 +53,12 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-
             <LinearLayout
                 android:id="@+id/bebidasquentesCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
-
 
                 <TextView
                     android:id="@+id/bebidasquentesTitle"
