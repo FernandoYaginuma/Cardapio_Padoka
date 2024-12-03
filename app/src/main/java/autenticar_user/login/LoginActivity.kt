@@ -1,4 +1,5 @@
 package autenticar_user.login
+
 import autenticar_user.cadastro.CadastrarUsuarioActivity
 import autenticar_user.redefinirSenha.RedefinirSenhaActivity
 import View.CardapioActivity
@@ -7,8 +8,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import com.example.cardapio_padoka.R
 
@@ -22,8 +26,13 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         campEmail = findViewById(R.id.campEmail)
         campPassword = findViewById(R.id.campPassword)
         btnLogin = findViewById(R.id.btnLogin)

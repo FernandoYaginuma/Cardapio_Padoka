@@ -18,36 +18,20 @@
             android:name="View.CarrinhoActivity"
             android:exported="false" />
         <activity
-            android:name="carrinho_compra.ItemCarrinhoActivity"
-            android:exported="false" />
-        <activity
-            android:name="carrinho_compra.CarrinhoActivity"
-            android:exported="false" />
-        <activity
             android:name="autenticar_user.redefinirSenha.RedefinirSenhaActivity"
             android:exported="false" />
         <activity
             android:name="autenticar_user.cadastro.CadastrarUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name="autenticar_user.login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name="View.CarrinhosActivity"
-            android:exported="false" />
-        <activity
-            android:name="View.Itemdetalhe"
-            android:exported="false" />
-        <activity
             android:name="View.CardapioActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="autenticar_user.login.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.Cardapio_Padoka" >
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

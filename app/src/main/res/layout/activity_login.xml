@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cenariofundo">
+    android:background="@drawable/cenariofundo"
+    tools:context="autenticar_user.login.LoginActivity">
+    >
 
     <ImageView
         android:id="@+id/padokaLogo"
