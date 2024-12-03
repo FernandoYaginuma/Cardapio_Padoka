@@ -30,7 +30,7 @@
             android:name="autenticar_user.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="View.Telaconclusao"
+            android:name="View.CarrinhoActivity"
             android:exported="false" />
         <activity
             android:name="View.Itemdetalhe"

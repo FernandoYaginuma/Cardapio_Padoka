@@ -1,4 +1,7 @@
+import java.math.BigDecimal
+
 class Item {
+    var quantidade: Int? = null
     var id: String? = null
     var nome: String? = null
     var descricao: String? = null
