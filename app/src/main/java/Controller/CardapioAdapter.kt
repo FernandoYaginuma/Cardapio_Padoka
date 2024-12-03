@@ -25,9 +25,9 @@ class CardapioAdapter(private val listaItens: MutableList<Item>) :
 
     override fun getItemCount() = listaItens.size
 
-    fun atualizarLista(novasTarefas: List<Item>) {
+    fun atualizarLista(novosItens: List<Item>) {
         listaItens.clear()
-        listaItens.addAll(novasTarefas)
+        listaItens.addAll(novosItens)
         notifyDataSetChanged()
     }
     }

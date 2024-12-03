@@ -54,7 +54,7 @@ class CardapioActivity : AppCompatActivity() {
                 val bebidasquentes = querySnapshot.documents.mapNotNull { doc ->
                     doc.toObject(Item::class.java)
                 }
-                bebidasquentes.atualizarLista(bebidasquentes)
+                bebidasquentesAdapter.atualizarLista(bebidasquentes)
             }
 
         carregarCategoria("bebidasgeladas", bebidasgeladasAdapter)
