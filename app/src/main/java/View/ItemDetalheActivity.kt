@@ -46,12 +46,10 @@ class ItemDetalheActivity : AppCompatActivity() {
             val quantidade = binding.numberPicker.value
             val item = Item(quantidade, null, itemNome, itemDescricao, itemPreco, itemImagemUrl, null)
             adicionarAoPedido(userId, item)
-
             val intent = Intent(this, CardapioActivity::class.java)
             startActivity(intent)
             finish()
         }
-
 
         binding.btnBack.setOnClickListener {
             val intent = Intent(this, CardapioActivity::class.java)

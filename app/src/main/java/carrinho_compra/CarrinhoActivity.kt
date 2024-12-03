@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cardapio_padoka.databinding.ActivityCarrinhoBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import View.CardapioActivity
 
@@ -42,21 +43,27 @@ class CarrinhoActivity : AppCompatActivity() {
     }
 
     private fun carregarItensCarrinho() {
-        firestore.collection("carrinho")
-            .get()
-            .addOnSuccessListener { documentos ->
-                listaItensCarrinho.clear()
-                for (documento in documentos) {
-                    val item = documento.toObject(Item::class.java)
-                    item.id = documento.id
-                    listaItensCarrinho.add(item)
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            firestore.collection("usuarios").document(userId)
+                .collection("carrinho")
+                .get()
+                .addOnSuccessListener { documentos ->
+                    listaItensCarrinho.clear()
+                    for (documento in documentos) {
+                        val item = documento.toObject(Item::class.java)
+                        item.id = documento.id
+                        listaItensCarrinho.add(item)
+                    }
+                    adapter.notifyDataSetChanged()
+                    atualizarTotal()
                 }
-                adapter.notifyDataSetChanged()
-                atualizarTotal()
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(this, "Erro ao carregar carrinho: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Erro ao carregar carrinho: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(this, "Erro: usuário não autenticado", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun atualizarTotal() {
@@ -65,17 +72,23 @@ class CarrinhoActivity : AppCompatActivity() {
     }
 
     private fun removerItem(item: Item) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
         item.id?.let {
-            firestore.collection("carrinho").document(it).delete()
-                .addOnSuccessListener {
-                    listaItensCarrinho.remove(item)
-                    adapter.notifyDataSetChanged()
-                    atualizarTotal()
-                    Toast.makeText(this, "Item removido do carrinho", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { exception ->
-                    Toast.makeText(this, "Erro ao remover item: ${exception.message}", Toast.LENGTH_SHORT).show()
-                }
+            if (userId != null) {
+                firestore.collection("usuarios").document(userId)
+                    .collection("carrinho").document(it).delete()
+                    .addOnSuccessListener {
+                        listaItensCarrinho.remove(item)
+                        adapter.notifyDataSetChanged()
+                        atualizarTotal()
+                        Toast.makeText(this, "Item removido do carrinho", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(this, "Erro ao remover item: ${exception.message}", Toast.LENGTH_SHORT).show()
+                    }
+            } else {
+                Toast.makeText(this, "Erro: usuário não autenticado", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -85,15 +98,21 @@ class CarrinhoActivity : AppCompatActivity() {
             return
         }
 
-        firestore.collection("pedidos").add(mapOf("itens" to listaItensCarrinho))
-            .addOnSuccessListener {
-                listaItensCarrinho.clear()
-                adapter.notifyDataSetChanged()
-                atualizarTotal()
-                Toast.makeText(this, "Compra finalizada com sucesso!", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(this, "Erro ao finalizar compra: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            firestore.collection("usuarios").document(userId)
+                .collection("pedidos").add(mapOf("itens" to listaItensCarrinho))
+                .addOnSuccessListener {
+                    listaItensCarrinho.clear()
+                    adapter.notifyDataSetChanged()
+                    atualizarTotal()
+                    Toast.makeText(this, "Compra finalizada com sucesso!", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Erro ao finalizar compra: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(this, "Erro: usuário não autenticado", Toast.LENGTH_SHORT).show()
+        }
     }
 }
