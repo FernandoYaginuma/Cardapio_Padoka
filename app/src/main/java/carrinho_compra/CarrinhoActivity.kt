@@ -2,6 +2,7 @@ package carrinho_compra
 
 import carrinho_compra.CarrinhoAdapter
 import Item
+import View.CardapioActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
