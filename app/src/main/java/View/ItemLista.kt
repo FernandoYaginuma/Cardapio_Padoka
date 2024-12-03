@@ -13,7 +13,6 @@ class ItemLista : AppCompatActivity() {
         binding = ActivityItemListaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnDetal.setOnClickListener {
             val intent = Intent(this, ItemDetalheActivity::class.java)
             startActivity(intent)
