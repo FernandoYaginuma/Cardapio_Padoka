@@ -2,6 +2,7 @@ package View
 
 import carrinho_compra.CarrinhoAdapter
 import Item
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,12 @@ class CarrinhoActivity : AppCompatActivity() {
         binding.btnConfirmar.setOnClickListener {
             finalizarCompra()
         }
+
+        binding.btnBack.setOnClickListener {
+            val intent = Intent(this, CardapioActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun carregarItensCarrinho() {
@@ -58,7 +65,6 @@ class CarrinhoActivity : AppCompatActivity() {
         binding.precoTotal.text = "Total: R$ %.2f".format(total)
     }
 
-
     private fun removerItem(item: Item) {
         item.id?.let {
             firestore.collection("carrinho").document(it)
@@ -74,7 +80,6 @@ class CarrinhoActivity : AppCompatActivity() {
                 }
         }
     }
-
 
     private fun finalizarCompra() {
         if (listaItensCarrinho.isEmpty()) {
