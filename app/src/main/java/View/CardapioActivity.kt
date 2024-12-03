@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import autenticar_user.login.LoginActivity
+import carrinho_compra.CarrinhoActivity
 import com.example.cardapio_padoka.databinding.ActivityCardapioBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -39,17 +40,16 @@ class CardapioActivity : AppCompatActivity() {
 
         carregarDados()
 
-        // Configuração do botão de logout
         binding.btnLogout.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Finaliza a atividade atual
+            finish()
         }
 
-        // Configuração do botão do carrinho
         binding.btnCarrinho.setOnClickListener {
             val intent = Intent(this, CarrinhoActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

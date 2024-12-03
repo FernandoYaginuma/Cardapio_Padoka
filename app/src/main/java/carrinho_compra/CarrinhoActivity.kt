@@ -1,4 +1,4 @@
-package View
+package carrinho_compra
 
 import carrinho_compra.CarrinhoAdapter
 import Item
