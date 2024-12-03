@@ -8,6 +8,7 @@
     <string name="voltar">Voltar</string>
     <string name="menos"> - </string>
     <string name="mais"> + </string>
+    <string name="retornar">retornar</string>
 
     <!--Texto para Tela de login-->
     <string name="acesseContaTxt">Acesse sua conta</string>
