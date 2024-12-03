@@ -40,7 +40,6 @@
     <string name="doces">Doces</string>
     <string name="logout">Logout </string>
 
-
     <!--Texto para Tela de Carrinho-->
     <string name="carrinho">Carrinho</string>
     <string name="precoTotal"> Total: R$ 0,00</string>
