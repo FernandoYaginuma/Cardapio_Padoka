@@ -21,7 +21,7 @@
 <<<<<<< HEAD
             android:name="View.CarrinhoActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />git
 =======
             android:name="carrinho_compra.CarrinhoActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
