@@ -16,15 +16,19 @@
         tools:targetApi="31" >
         <activity
             android:name="View.CarrinhoActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name="autenticar_user.redefinirSenha.RedefinirSenhaActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name="autenticar_user.cadastro.CadastrarUsuarioActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name="View.CardapioActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name="autenticar_user.login.LoginActivity"
