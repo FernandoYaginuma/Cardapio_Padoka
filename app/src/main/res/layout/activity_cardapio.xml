@@ -5,17 +5,41 @@
     android:orientation="vertical"
     android:background="@drawable/cenariofundo">
 
-
-    <TextView
-        android:id="@+id/cardapioTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cardápio da Padaria"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/logout"
+        android:src="@drawable/ic_logout" />
+    <!-- Título do Cardápio -->
+    <TextView
+        android:id="@+id/cardapioTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cardapioPadaria"
         android:textSize="24sp"
         android:gravity="center"
-        android:padding="16dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
+    <ImageButton
+        android:id="@+id/btnCarrinho"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/carrinho"
+        android:src="@drawable/ic_shopping_cart" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -134,11 +158,7 @@
                     android:id="@+id/docesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                    android:text="Doces"
-=======
                     android:text="@string/doces"
->>>>>>> dcd27586df644aa9db4d63569824c7e152bd9e9b
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -149,8 +169,6 @@
                     android:layout_marginTop="8dp"
                     android:scrollbars="vertical" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
