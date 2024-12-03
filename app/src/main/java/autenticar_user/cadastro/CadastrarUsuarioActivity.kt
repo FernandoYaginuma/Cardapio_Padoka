@@ -27,17 +27,24 @@ class CadastrarUsuarioActivity : AppCompatActivity() {
         }
 
         binding.btnCadastrar.setOnClickListener {
+            val nome = binding.campNome.text.toString()
             val email = binding.campEmail.text.toString()
             val senha = binding.campPassword.text.toString()
             val confirmSenha = binding.campConfirmPassword.text.toString()
-            viewModel.cadastrarUsuario(email, senha, confirmSenha)
+
+            if (nome.isBlank()) {
+                Toast.makeText(this, "O campo Nome é obrigatório", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            viewModel.cadastrarUsuario(nome, email, senha, confirmSenha)
         }
 
         // Navegação de volta para a tela de login
         binding.btnVoltarLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Opcional: finaliza a atividade atual
+            finish()
         }
 
         viewModel.status.observe(this, Observer { status ->
