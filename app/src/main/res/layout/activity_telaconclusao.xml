@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <!-- Lista de Itens do Pedido -->
     <ListView
         android:id="@+id/orderListView"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:dividerHeight="1dp"
         android:padding="8dp" />
 
-    <!-- Container para Resumo e Total -->
     <LinearLayout
         android:id="@+id/summaryContainer"
         android:layout_width="match_parent"
@@ -26,7 +24,6 @@
         android:padding="16dp"
         android:elevation="4dp">
 
-        <!-- Total Geral -->
         <TextView
             android:id="@+id/totalPriceLabel"
             android:layout_width="wrap_content"
@@ -47,7 +44,6 @@
             android:textColor="@color/green"
             android:layout_marginBottom="16dp" />
 
-        <!-- Botão Confirmar Pedido -->
         <Button
             android:id="@+id/confirmOrderButton"
             android:layout_width="match_parent"

@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Cardapio_Padoka"
         tools:targetApi="31">
         <activity
+            android:name="carrinho_compra.ItemCarrinhoActivity"
+            android:exported="false" />
+        <activity
+            android:name="carrinho_compra.CarrinhoActivity"
+            android:exported="false" />
+        <activity
             android:name="autenticar_user.redefinirSenha.RedefinirSenhaActivity"
             android:exported="false" />
         <activity
@@ -38,6 +44,7 @@
             android:theme="@style/Theme.Cardapio_Padoka">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

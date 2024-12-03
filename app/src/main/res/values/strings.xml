@@ -6,6 +6,8 @@
     <string name="email">E-mail</string>
     <string name="senha">Senha</string>
     <string name="voltar">Voltar</string>
+    <string name="menos"> - </string>
+    <string name="mais"> + </string>
 
     <!--Texto para Tela de login-->
     <string name="acesseContaTxt">Acesse sua conta</string>
@@ -20,8 +22,15 @@
     <string name="voltarLogin">Voltar para tela de login</string>
 
     <!--Texto para Tela de recuperar Senha-->
-    <string name="instrucoesRecuperarSenha">Informe o seu e-mail para recuperar a senha. Você receberá uma mensagem contendo as instruções para recuperação!</string>"
+    <string name="instrucoesRecuperarSenha">Informe o seu e-mail para recuperar a senha. Você receberá uma mensagem contendo as instruções para recuperação!</string>
 
     <!--Texto para Tela de item detalhe-->
     <string name="item_image_description"> item descrição </string>
+    <string name="nomeItem"> nome do item</string>
+    <string name="precoItem"> R$ 0.00</string>
+    <string name="numberOne"> 1 </string>
+
+    <!--Texto para Tela de Carrinho-->
+    <string name="carrinho">Carrinho</string>
+    <string name="precoTotal"> Total: R$ 0,00</string>
 </resources>

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/cenariofundo">
 
     <!-- Barra de navegação com o nome do cardápio -->
     <TextView
@@ -46,7 +47,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/entradasList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,7 +70,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/pratosPrincipaisList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,7 +93,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/bebidasList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,7 +116,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sobremesasList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

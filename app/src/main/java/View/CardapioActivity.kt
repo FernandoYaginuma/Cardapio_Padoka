@@ -1,6 +1,7 @@
 package View
 
 import CardapioAdapter
+import CardapioControler
 import Item
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,7 @@ class CardapioActivity : AppCompatActivity() {
         setupRecyclerView(binding.pratosPrincipaisList, pratosPrincipaisAdapter)
         setupRecyclerView(binding.bebidasList, bebidasAdapter)
         setupRecyclerView(binding.sobremesasList, sobremesasAdapter)
+
 
         carregarDados()
     }
@@ -72,4 +74,5 @@ class CardapioActivity : AppCompatActivity() {
             }
     }
 }
+
 
