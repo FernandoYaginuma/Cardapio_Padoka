@@ -31,6 +31,16 @@
     <string name="precoItem"> R$ 0.00</string>
     <string name="numberOne"> 1 </string>
 
+    <!--Texto para Tela de cardapio-->
+    <string name="cardapioPadaria">Cardápio da Padaria</string>
+    <string name="bebidasQuentes">Bebidas Quentes</string>
+    <string name="bebidasGeladas">Bebidas Geladas</string>
+    <string name="lanches">Lanches</string>
+    <string name="salgados">Salgados</string>
+    <string name="doces">Doces</string>
+    <string name="logout">Logout </string>
+
+
     <!--Texto para Tela de Carrinho-->
     <string name="carrinho">Carrinho</string>
     <string name="precoTotal"> Total: R$ 0,00</string>
