@@ -4,12 +4,8 @@ import Controller.CarrinhoAdapter
 import Item
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cardapio_padoka.R
 import com.example.cardapio_padoka.databinding.ActivityCarrinhoBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -58,7 +54,7 @@ class CarrinhoActivity : AppCompatActivity() {
     }
 
     private fun atualizarTotal() {
-        val total = listaItensCarrinho.sumOf { it.quantidade * it.preco!! }
+        val total = listaItensCarrinho.sumOf { it.quantidade?.times(it.preco!!) ?: 0.0 }
         binding.precoTotal.text = "Total: R$ %.2f".format(total)
     }
 
