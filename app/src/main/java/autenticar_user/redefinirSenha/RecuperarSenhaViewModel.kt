@@ -6,32 +6,45 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RecuperarSenhaViewModel : ViewModel() {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> get() = _status
 
-    fun verificarEmail(email: String) {
-        if (!isValidEmail(email)) {
+    fun verificarEmail(inputEmail: String) {
+        if (!isValidEmail(inputEmail)) {
             _status.value = "Por favor, insira um e-mail válido."
             return
         }
 
-        auth.fetchSignInMethodsForEmail(email)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val signInMethods = task.result?.signInMethods
-                    Log.d("RecuperarSenhaViewModel", "Métodos de autenticação: $signInMethods")
-                    if (!signInMethods.isNullOrEmpty()) {
-                        redefinirSenha(email)
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            _status.value = "Usuário não autenticado."
+            return
+        }
+
+        firestore.collection("usuarios")
+            .document(currentUser.uid)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val emailCadastrado = document.getString("email")
+
+                    if (emailCadastrado == inputEmail) {
+                        redefinirSenha(inputEmail)
                     } else {
-                        _status.value = "E-mail não cadastrado. Por favor, cadastre-se."
+                        _status.value = "O e-mail não corresponde ao cadastrado."
                     }
                 } else {
-                    _status.value = "Erro ao verificar e-mail: ${task.exception?.message}"
-                    Log.e("RecuperarSenhaViewModel", "Erro ao verificar e-mail", task.exception)
+                    _status.value = "Documento do usuário não encontrado."
                 }
+            }
+            .addOnFailureListener { exception ->
+                _status.value = "Erro ao buscar documento: ${exception.message}"
+                Log.e("RecuperarSenhaViewModel", "Erro ao buscar documento", exception)
             }
     }
 

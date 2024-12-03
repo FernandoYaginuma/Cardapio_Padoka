@@ -18,7 +18,7 @@ class RedefinirSenhaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_redefinir_senha) // Certifique-se de que o nome do layout esteja correto
+        setContentView(R.layout.activity_redefinir_senha)
 
         campEmail = findViewById(R.id.campEmail)
         btnRecuperarSenha = findViewById(R.id.btnRecuperarSenha)
