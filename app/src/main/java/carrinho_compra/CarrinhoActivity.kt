@@ -20,7 +20,6 @@ class CarrinhoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityCarrinhoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

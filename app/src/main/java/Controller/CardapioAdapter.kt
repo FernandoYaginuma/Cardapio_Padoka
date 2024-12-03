@@ -38,6 +38,7 @@ class CardapioAdapter(private val listaItens: MutableList<Item>) :
                 }
                 holder.itemView.context.startActivity(intent)
             }
+
         }
     }
 
