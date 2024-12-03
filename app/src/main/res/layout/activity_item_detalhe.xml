@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <!-- ScrollView para conteúdos maiores -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +15,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Imagem do Item -->
             <ImageView
                 android:id="@+id/itemImage"
                 android:layout_width="match_parent"
@@ -25,7 +23,6 @@
                 android:contentDescription="@string/item_image_description"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Nome do Item -->
             <TextView
                 android:id="@+id/itemName"
                 android:layout_width="match_parent"
@@ -46,7 +43,6 @@
                 android:textColor="@color/black"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Preço -->
             <TextView
                 android:id="@+id/itemPrice"
                 android:layout_width="wrap_content"
@@ -59,7 +55,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Botão Adicionar ao Pedido -->
     <Button
         android:id="@+id/addToCartButton"
         android:layout_width="match_parent"

@@ -45,28 +45,18 @@ class CardapioActivity : AppCompatActivity() {
     }
 
     private fun carregarDados() {
-        val db = FirebaseFirestore.getInstance()
-
-        db.collection("Item")
-            .whereEqualTo("categoria", "bebidasquentes")
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                val bebidasquentes = querySnapshot.documents.mapNotNull { doc ->
-                    doc.toObject(Item::class.java)
-                }
-                bebidasquentesAdapter.atualizarLista(bebidasquentes)
-            }
-
+        carregarCategoria("bebidasquentes", bebidasquentesAdapter)
         carregarCategoria("bebidasgeladas", bebidasgeladasAdapter)
         carregarCategoria("lanches", lanchesAdapter)
         carregarCategoria("salgados", salgadosAdapter)
         carregarCategoria("doces", docesAdapter)
     }
 
+
     private fun carregarCategoria(categoria: String, adapter: CardapioAdapter) {
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("itens")
+        db.collection("Item")
             .whereEqualTo("categoria", categoria)
             .get()
             .addOnSuccessListener { querySnapshot ->
