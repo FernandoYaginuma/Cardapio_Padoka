@@ -134,7 +134,11 @@
                     android:id="@+id/docesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:text="Doces"
+=======
+                    android:text="@string/doces"
+>>>>>>> dcd27586df644aa9db4d63569824c7e152bd9e9b
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

@@ -7,6 +7,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import autenticar_user.login.LoginActivity
+import carrinho_compra.CarrinhoActivity
 import com.example.cardapio_padoka.databinding.ActivityCardapioBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -36,8 +38,19 @@ class CardapioActivity : AppCompatActivity() {
         setupRecyclerView(binding.salgadosList, salgadosAdapter)
         setupRecyclerView(binding.docesList, docesAdapter)
 
-
         carregarDados()
+
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.btnCarrinho.setOnClickListener {
+            val intent = Intent(this, CarrinhoActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView, adapter: CardapioAdapter) {
@@ -53,7 +66,6 @@ class CardapioActivity : AppCompatActivity() {
         carregarCategoria("doces", docesAdapter)
     }
 
-
     private fun carregarCategoria(categoria: String, adapter: CardapioAdapter) {
         val db = FirebaseFirestore.getInstance()
 
@@ -68,5 +80,3 @@ class CardapioActivity : AppCompatActivity() {
             }
     }
 }
-
-

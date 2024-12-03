@@ -32,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="211dp" />
+        tools:layout_editor_absoluteY="211dp"
+        app:layout_constraintTop_toBottomOf="@id/padokaLogo"/>
 
     <TextView
         android:id="@+id/campInstrucaoRecuperacao"

@@ -1,4 +1,5 @@
 package autenticar_user.cadastro
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -39,15 +40,24 @@ class CadastroUsuarioViewModel : ViewModel() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val userId = task.result?.user?.uid ?: return@addOnCompleteListener
+                    val carrinho = listOf(
+                        hashMapOf(
+                            "nomeItem" to "",
+                            "quantidade" to 0,
+                            "preco" to 0.0,
+                            "valorTotal" to 0.0
+                        )
+                    )
 
                     val userMap = hashMapOf(
                         "nome" to nome,
                         "email" to email,
-                        "senha" to senha // Evite salvar a senha diretamente em produção, use hash
+                        "senha" to senha,
+                        "carrinho" to carrinho
                     )
 
-                    firestore.collection("usuario")
-                        .document("gestao usuario")
+                    firestore.collection("usuarios")
+                        .document(userId)
                         .set(userMap)
                         .addOnSuccessListener {
                             _status.value = "Cadastro realizado com sucesso e salvo no Firestore"
