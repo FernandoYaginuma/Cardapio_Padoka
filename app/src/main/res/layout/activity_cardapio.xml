@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@drawable/cenariofundo">
 
-    <!-- Barra de navegação com o nome do cardápio -->
+
     <TextView
         android:id="@+id/cardapioTitle"
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:padding="16dp"
         android:textStyle="bold"/>
 
-    <!-- Seções de categorias (Entradas, Pratos, Bebidas, Sobremesas) -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,26 +29,25 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Exemplo de uma categoria -->
-            <!-- Cada categoria será populada dinamicamente via Firebase -->
+
             <LinearLayout
-                android:id="@+id/entradasCategory"
+                android:id="@+id/bebidasquentesCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
 
-                <!-- Lista de itens da categoria 'Entradas' -->
+
                 <TextView
-                    android:id="@+id/entradasTitle"
+                    android:id="@+id/bebidasquentesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Entradas"
+                    android:text="Bebidas Quentes"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/entradasList"
+                    android:id="@+id/bebidasquentesList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -56,22 +55,22 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/pratosPrincipaisCategory"
+                android:id="@+id/bebidasgeladasCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
 
                 <TextView
-                    android:id="@+id/pratosPrincipaisTitle"
+                    android:id="@+id/bebidasgeladasTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pratos Principais"
+                    android:text="Bebidas Geladas"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/pratosPrincipaisList"
+                    android:id="@+id/bebidasgeladasList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -79,22 +78,22 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/bebidasCategory"
+                android:id="@+id/lanchesCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
 
                 <TextView
-                    android:id="@+id/bebidasTitle"
+                    android:id="@+id/lanchesTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bebidas"
+                    android:text="Lanches"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/bebidasList"
+                    android:id="@+id/lanchesList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -102,22 +101,45 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/sobremesasCategory"
+                android:id="@+id/salgadosCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
 
                 <TextView
-                    android:id="@+id/sobremesasTitle"
+                    android:id="@+id/salgadosTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sobremesas"
+                    android:text="Salgados"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/sobremesasList"
+                    android:id="@+id/salgadosList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/docesCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/docesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Salgados"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/docesList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

@@ -10,7 +10,8 @@ class Item {
     var categoria: String? = null
 
     constructor()
-    constructor(id: String?, nome: String?, descricao: String?, preco: Double?, imageURL: String?, categoria: String?) {
+    constructor(quantidade: Int?,id: String?, nome: String?, descricao: String?, preco: Double?, imageURL: String?, categoria: String?) {
+        this.quantidade = quantidade
         this.id = id
         this.nome = nome
         this.descricao = descricao
