@@ -1,7 +1,6 @@
 package View
 
 import CardapioAdapter
-import CardapioControler
 import Item
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

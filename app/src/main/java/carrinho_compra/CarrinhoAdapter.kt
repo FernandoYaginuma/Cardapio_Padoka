@@ -1,10 +1,11 @@
-package Controller
+package carrinho_compra
 
 import Item
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cardapio_padoka.databinding.ActivityItemCarrinhoBinding
 
 class CarrinhoAdapter(
     private val itensCarrinho: MutableList<Item>,
@@ -12,10 +13,10 @@ class CarrinhoAdapter(
     private val removerItem: (Item) -> Unit
 ) : RecyclerView.Adapter<CarrinhoAdapter.CarrinhoViewHolder>() {
 
-    class CarrinhoViewHolder(val binding: ItemCarrinhoBinding) : RecyclerView.ViewHolder(binding.root)
+    class CarrinhoViewHolder(val binding: ActivityItemCarrinhoBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarrinhoViewHolder {
-        val binding = ItemCarrinhoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ActivityItemCarrinhoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CarrinhoViewHolder(binding)
     }
 
@@ -46,11 +47,13 @@ class CarrinhoAdapter(
             removerItem(item)
         }
 
-        // Falta a Imagem
+        //  a imagem do item
 
     }
 
     override fun getItemCount(): Int {
         return itensCarrinho.size
     }
+
+
 }
