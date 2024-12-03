@@ -12,25 +12,28 @@ import com.google.firebase.firestore.FirebaseFirestore
 class CardapioActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCardapioBinding
-    private lateinit var entradasAdapter: CardapioAdapter
-    private lateinit var pratosPrincipaisAdapter: CardapioAdapter
-    private lateinit var bebidasAdapter: CardapioAdapter
-    private lateinit var sobremesasAdapter: CardapioAdapter
+    private lateinit var bebidasquentesAdapter: CardapioAdapter
+    private lateinit var bebidasgeladasAdapter: CardapioAdapter
+    private lateinit var lanchesAdapter: CardapioAdapter
+    private lateinit var salgadosAdapter: CardapioAdapter
+    private lateinit var docesAdapter: CardapioAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCardapioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        entradasAdapter = CardapioAdapter(mutableListOf())
-        pratosPrincipaisAdapter = CardapioAdapter(mutableListOf())
-        bebidasAdapter = CardapioAdapter(mutableListOf())
-        sobremesasAdapter = CardapioAdapter(mutableListOf())
+        bebidasquentesAdapter = CardapioAdapter(mutableListOf())
+        bebidasgeladasAdapter = CardapioAdapter(mutableListOf())
+        lanchesAdapter = CardapioAdapter(mutableListOf())
+        salgadosAdapter = CardapioAdapter(mutableListOf())
+        docesAdapter = CardapioAdapter(mutableListOf())
 
-        setupRecyclerView(binding.entradasList, entradasAdapter)
-        setupRecyclerView(binding.pratosPrincipaisList, pratosPrincipaisAdapter)
-        setupRecyclerView(binding.bebidasList, bebidasAdapter)
-        setupRecyclerView(binding.sobremesasList, sobremesasAdapter)
+        setupRecyclerView(binding.bebidasquentesList, bebidasquentesAdapter)
+        setupRecyclerView(binding.bebidasgeladasList, bebidasgeladasAdapter)
+        setupRecyclerView(binding.lanchesList, lanchesAdapter)
+        setupRecyclerView(binding.salgadosList, salgadosAdapter)
+        setupRecyclerView(binding.docesList, docesAdapter)
 
 
         carregarDados()
@@ -44,19 +47,20 @@ class CardapioActivity : AppCompatActivity() {
     private fun carregarDados() {
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("itens")
-            .whereEqualTo("categoria", "Entradas")
+        db.collection("Item")
+            .whereEqualTo("categoria", "bebidasquentes")
             .get()
             .addOnSuccessListener { querySnapshot ->
-                val entradas = querySnapshot.documents.mapNotNull { doc ->
+                val bebidasquentes = querySnapshot.documents.mapNotNull { doc ->
                     doc.toObject(Item::class.java)
                 }
-                entradasAdapter.atualizarLista(entradas)
+                bebidasquentes.atualizarLista(bebidasquentes)
             }
 
-        carregarCategoria("Pratos Principais", pratosPrincipaisAdapter)
-        carregarCategoria("Bebidas", bebidasAdapter)
-        carregarCategoria("Sobremesas", sobremesasAdapter)
+        carregarCategoria("bebidasgeladas", bebidasgeladasAdapter)
+        carregarCategoria("lanches", lanchesAdapter)
+        carregarCategoria("salgados", salgadosAdapter)
+        carregarCategoria("doces", docesAdapter)
     }
 
     private fun carregarCategoria(categoria: String, adapter: CardapioAdapter) {
